@@ -1,5 +1,5 @@
 # ProjetoOO
-# 🗂️ Organizador de Tarefas
+#  Organizador de Tarefas
 
 Este é um mini projeto desenvolvido em **Python** para gerenciar tarefas pessoais com organização por **prioridade**, **status** e **categorias**. O sistema opera via **terminal** ou com uma **interface gráfica em Tkinter**. Permite realizar operações como cadastro, conclusão e listagem de tarefas, aplicando princípios sólidos de **POO (Programação Orientada a Objetos)**.
 
@@ -7,16 +7,16 @@ Futuramente, pretendo incrementar mais funcionalidades, como filtro por data e m
 
 ---
 
-## ✅ Funcionalidades
+##  Funcionalidades
 
-### 🎓 Gerenciamento de Tarefas
+###  Gerenciamento de Tarefas
 
 - **Cadastrar Tarefa**: Adiciona uma nova tarefa com título, descrição, prioridade e categoria.
 - **Cadastrar Subtarefas**: Permite tarefas compostas por subtarefas.
 - **Marcar como Concluída**: Atualiza o status da tarefa e subtarefas para concluídas.
 - **Listar Tarefas**: Mostra todas as tarefas cadastradas com status e prioridade.
 
-### 🖥️ Interface Gráfica (Tkinter)
+###  Interface Gráfica (Tkinter)
 
 - Adicionar tarefas com campos de entrada
 - Marcar tarefas como concluídas
@@ -24,7 +24,7 @@ Futuramente, pretendo incrementar mais funcionalidades, como filtro por data e m
 
 ---
 
-## 🧱 Estrutura do Projeto
+##  Estrutura do Projeto
 
 organizador_tarefas_atualizado/
 ├── main.py # Interface via terminal
@@ -40,7 +40,7 @@ organizador_tarefas_atualizado/
 
 ---
 
-## 💻 Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 - **Linguagem**: Python 3.11+
 - **Paradigma**: Programação Orientada a Objetos
@@ -49,7 +49,7 @@ organizador_tarefas_atualizado/
 
 ---
 
-## 🧠 Principais Conceitos de OO Aplicados
+##  Principais Conceitos de OO Aplicados
 
 - **Encapsulamento**: Organização em classes e pacotes
 - **Herança**: `TarefaComSubtarefas` herda de `Tarefa`
@@ -59,7 +59,7 @@ organizador_tarefas_atualizado/
 
 ---
 
-## ▶️ Como Executar
+##  Como Executar
 
 ## Modo Terminal:
 python main.py
@@ -71,14 +71,14 @@ python main.py
 4. Sair
 -----------------------------
 Digite o número da sua escolha: `1`
-Título da Tarefa: `Estudar POO`
-Descrição da tarefa 'Estudar POO': `Ler capítulo 4`
+Título da Tarefa: `Estudar OO`
+Descrição da tarefa 'Estudar OO': `Ler capítulo 4`
 Prioridade (alta, media, baixa): `alta`
 Categoria: `Estudos`
 É composta de subtarefas? ('s' ou 'n'): `n`
 Tarefa Adicionada com Sucesso!
 
-📅 Projeto Acadêmico
+ Projeto Acadêmico
 Projeto Livre — Disciplina de Orientação a Objetos
 Universidade de Brasília — FCTE
 Professor: Henrique Moura

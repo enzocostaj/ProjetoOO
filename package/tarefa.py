@@ -2,7 +2,7 @@ class Tarefa:
     def __init__(self, titulo, descricao, prioridade, categoria):
         self.titulo = titulo
         self.descricao = descricao
-        self.prioridade = prioridade  # alta, media, baixa
+        self.prioridade = prioridade
         self.concluida = False
         self.categoria = categoria
 

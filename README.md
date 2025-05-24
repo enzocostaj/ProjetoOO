@@ -72,7 +72,7 @@ python main.py
 -----------------------------
 Digite o número da sua escolha: `1`
 Título da Tarefa: `Estudar OO`
-Descrição da tarefa 'Estudar POO': `Ler capítulo 4`
+Descrição da tarefa 'Estudar OO': `Ler capítulo 4`
 Prioridade (alta, media, baixa): `alta`
 Categoria: `Estudos`
 É composta de subtarefas? ('s' ou 'n'): `n`

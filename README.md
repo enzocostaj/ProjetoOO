@@ -71,7 +71,7 @@ python main.py
 4. Sair
 -----------------------------
 Digite o número da sua escolha: `1`
-Título da Tarefa: `Estudar POO`
+Título da Tarefa: `Estudar OO`
 Descrição da tarefa 'Estudar POO': `Ler capítulo 4`
 Prioridade (alta, media, baixa): `alta`
 Categoria: `Estudos`

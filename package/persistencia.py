@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import os
 import json
 from package.categoria import Categoria
@@ -39,3 +40,17 @@ def remover_arquivo_tarefa(tarefa):
     nome_arquivo = f"tarefas/{tarefa.titulo.replace(' ', '_')}.json"
     if os.path.exists(nome_arquivo):
         os.remove(nome_arquivo) 
+=======
+import pickle
+
+def salvar(dados, arquivo="dados.pkl"):
+    with open(arquivo, "wb") as f:
+        pickle.dump(dados, f)
+
+def carregar(arquivo="dados.pkl"):
+    try:
+        with open(arquivo, "rb") as f:
+            return pickle.load(f)
+    except FileNotFoundError:
+        return []
+>>>>>>> 1a2e03fde8e6a3507d701e4ebdc0c421204fdf86

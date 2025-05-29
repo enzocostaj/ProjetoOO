@@ -4,12 +4,12 @@ from package import persistencia
 
 class GerenciadorTarefas:
     def __init__(self):
-        self.tarefas = persistencia.carregar()
+        self.tarefas = persistencia.carregar_tarefas()
         self.categorias = {}
 
     def menu(self):
         while True:
-            print("\n-----------------------------\n1. Adicionar tarefa\n2. Listar tarefas\n3. Marcar como concluída\n4. Sair\n-----------------------------")
+            print("\n-----------------------------\n1. Adicionar tarefa\n2. Listar tarefas\n3. Marcar como concluída e remover da lista\n4. Sair\n-----------------------------")
             op = input("Digite o número da sua escolha: ")
             if op == "1":
                 self.adicionar_tarefa()
@@ -18,15 +18,14 @@ class GerenciadorTarefas:
             elif op == "3":
                 self.marcar_concluida()
             elif op == "4":
-                persistencia.salvar(self.tarefas)
-                print("Salvo e saindo...")
+                print("Saindo...")
                 break
 
     def adicionar_tarefa(self):
         titulo = input("Título da Tarefa: ")
         descricao = input(f"Descrição da tarefa '{titulo}': ")
         prioridade = input("Prioridade (alta, media, baixa): ")
-        nome_cat = input("Categoria (Ex: Estudos, Projetos, Atendimentos, Gerências...): ")
+        nome_cat = input("Categoria (Ex: Estudos, Projetos, Atendimentos...): ")
 
         if nome_cat not in self.categorias:
             self.categorias[nome_cat] = Categoria(nome_cat)
@@ -47,6 +46,7 @@ class GerenciadorTarefas:
             print("Tarefa Adicionada com Sucesso!")
 
         self.tarefas.append(tarefa)
+        persistencia.salvar_tarefa(tarefa)
 
     def listar_tarefas(self):
         for i, tarefa in enumerate(self.tarefas):
@@ -55,17 +55,19 @@ class GerenciadorTarefas:
     def marcar_concluida(self):
         self.listar_tarefas()
         try:
-            idx = int(input("Número da tarefa concluída: ")) - 1
+            idx = int(input("Número da tarefa a ser removida: ")) - 1
             if 0 <= idx < len(self.tarefas):
                 tarefa = self.tarefas[idx]
                 tarefa.marcar_concluida()
-                # Se for uma TarefaComSubtarefas, marcar todas também
-                if hasattr(tarefa, "subtarefas"):
-                    for sub in tarefa.subtarefas:
-                        sub.marcar_concluida()
-                print("Tarefa (e subtarefas, se houver) marcada como concluída.")
+                
+                self.tarefas.pop(idx)
+                
+                persistencia.remover_arquivo_tarefa(tarefa)  
+                
+                print("Tarefa removida da lista!")
+                
+                self.listar_tarefas()
             else:
                 print("Índice inválido.")
         except ValueError:
             print("Entrada inválida. Digite um número.")
-
